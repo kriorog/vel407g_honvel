@@ -1,0 +1,6 @@
+/.quarto/
+/_site/
+/.venv/
+/test_files/
+**/*.quarto_ipynb
+.DS_Store

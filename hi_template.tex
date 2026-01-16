@@ -1,0 +1,28 @@
+\usepackage{graphicx}
+\usepackage{eso-pic}
+\usepackage{geometry}
+
+% 1. Define the page geometry (A4)
+\geometry{
+    a4paper,
+    top=55mm,    % Leaves room for the banner + some white space
+    left=25mm,
+    right=25mm,
+    bottom=25mm
+}
+
+% 2. Absolute Positioning Logic
+% This 'pins' the image to the Upper Left Corner of the physical paper
+\AddToShipoutPictureBG{%
+    \AtPageUpperLeft{%
+        \raisebox{-\height}{%
+            \includegraphics[width=\paperwidth]{figures/hi_header.png}%
+        }%
+    }%
+}
+
+% 3. Clean up the rest of the page
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % Clears default headers/footers
+\renewcommand{\headrulewidth}{0pt} % Removes the header line
