@@ -1,0 +1,43 @@
+\usepackage{graphicx, eso-pic, geometry}
+
+% 1. Define the page geometry (A4)
+\geometry{
+    a4paper,
+    top=35mm,    % Leaves room for the banner + some white space
+    left=25mm,
+    right=25mm,
+    bottom=30mm
+}
+
+% 2. Absolute Positioning Logic
+% This 'pins' the image to the Upper Left Corner of the physical paper
+\AddToShipoutPictureBG{
+    \AtPageUpperLeft{
+        \raisebox{-\height}{
+            \put(15mm, -30mm){
+                \includegraphics[width=0.8\paperwidth]{hi-audkenni_29-idnveltold}
+            }
+        }
+    }
+}
+
+
+% 3. Clean up the rest of the page (not page 1)
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % Clears default headers/footers
+\lfoot{\leftfootertext} % USES THE COMMAND FROM YAML
+\cfoot{\thepage}
+\rfoot{\rightfootertext}
+\renewcommand{\headrulewidth}{0pt} % Removes the header line
+
+% 4. THE FIX FOR PAGE 1: Redefine 'plain' style
+% LaTeX automatically applies 'plain' to the title page. 
+% We force 'plain' to look exactly like our 'fancy' style.
+\fancypagestyle{plain}{
+    \fancyhf{} % Clears default headers/footers
+    \lfoot{\leftfootertext} % USES THE COMMAND FROM YAML
+    \cfoot{\thepage}
+    \rfoot{\rightfootertext}
+    \renewcommand{\headrulewidth}{0pt} % Removes the header line
+}
