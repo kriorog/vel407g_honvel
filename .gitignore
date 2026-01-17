@@ -5,4 +5,5 @@
 **/*.quarto_ipynb
 .DS_Store
 *.pdf
+!/_extensions/hi-template/fig/*.pdf
 /_kennslubók/
