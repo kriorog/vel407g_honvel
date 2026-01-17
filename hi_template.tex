@@ -5,10 +5,10 @@
 % 1. Define the page geometry (A4)
 \geometry{
     a4paper,
-    top=55mm,    % Leaves room for the banner + some white space
+    top=35mm,    % Leaves room for the banner + some white space
     left=25mm,
     right=25mm,
-    bottom=25mm
+    bottom=30mm
 }
 
 % 2. Absolute Positioning Logic
@@ -16,7 +16,9 @@
 \AddToShipoutPictureBG{%
     \AtPageUpperLeft{%
         \raisebox{-\height}{%
-            \includegraphics[width=\paperwidth]{figures/hi-audkenni_29-idnveltold.pdf}%
+            \put(15mm, -30mm){
+                \includegraphics[width=0.8\paperwidth]{figures/hi-audkenni_29-idnveltold.pdf}%
+            }
         }%
     }%
 }
